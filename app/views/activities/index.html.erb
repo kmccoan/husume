@@ -1,3 +1,28 @@
-<% @activities.each { |activity| %>
-	<%= image_tag(activity.photoUrl, :class => "photo") %>
-<% } %>
+<% content_for :head do %>
+  <%= javascript_include_tag 'http://maps.googleapis.com/maps/api/js?key=AIzaSyDozWL9RGIlJ39MvNRF5K4n2NvabKrk7uU&sensor=false' %>
+<% end %>
+<% @activity = @activities.first %>
+<% content_for :header do %>
+	<div class="title">
+	  <%= I18n.t(:activity_text) %>
+	  <%=link_to @activity.name , @activity.link, :target => "_blank" %>
+	</div>
+<% end %>
+
+<div class="activity-main-content">
+	<div class="left-side photo">
+		<%= image_tag(@activity.photoUrl, :class => "photo"); %>
+	</div>
+	<div class="right-side map">
+		<%= tag(:div, :class=>"map", :id=>"map_canvas",
+			data: {lat: @activity.lat, long: @activity.long}, :escape=>false) %>
+	</div>
+</div>
+
+<% content_for :footer do %>
+	<div class="activity-footer">
+		<div class="left-side">
+		   <%= paginate @activities %>
+		</div>
+	</div>
+<% end %>
