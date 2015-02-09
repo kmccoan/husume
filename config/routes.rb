@@ -1,14 +1,14 @@
 VancouverProj::Application.routes.draw do
-  get 'categories/index'
+	get 'categories/index'
 
 	root :to => 'pages#main'
-	
+
 	resources :categories do
-	  resources :activities
+		resources :activities
 	end
-	
+
 	namespace :activities do
-	    get 'search'
+		get 'search'
 	end
 
 

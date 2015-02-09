@@ -9,61 +9,85 @@
 	text-shadow: 1px 1px 1px #21BEDE;
 }
 
-/*** choice module ***/
-.choice-main-content {
+/*** grid module ***/
+.grid {
 	margin:0 auto;
-	border-top: 1px solid $primary-shadow-color;
-	border-bottom: 1px solid $primary-shadow-color;
+
+	.bordered {
+		border-top: 1px solid $primary-shadow-color;
+		border-bottom: 1px solid $primary-shadow-color;
+	}
 	padding: 5.0% 0;
 
-	%side {
-		display: block;
-		margin: 0 auto;
-		text-align:center;
+	.grid-section {
+		clear: both;
+		padding: 0px;
+		margin: 0px;
 	}
-	.left-side {
-		@extend %side;
+
+	.col {
+		display: block;
+		float:left;
+		margin: 1% 0 1% 1.6%;
+		text-align: center;
+	}
+	.col:first-child { margin-left: 0; }
+
+	.group:before,
+	.group:after {
+		content:"";
+		display:table;
+	}
+	.group:after {
+		clear:both;
+	}
+	.group {
+	    zoom:1; /* For IE 6/7 */
+	}
+
+	%full-width {
+		width: 100%;
+	}
+
+	.span_3_of_3 {
+		@extend %full-width;
+	}
+	.span_2_of_3 {
+		width: 66.1%;
+	}
+	.span_1_of_3 {
+		width: 29%;
+	}
+
+	.span_1_of_2 {
 		width: 49%;
 	}
-	.right-side {
-		@extend %side;
-		width: 50%;
+
+	.span_2_of_2 {
+		@extend %full-width;
 	}
-	.sun a {
-		height: 128px;
-		width: 128px;
-		display: block;
-		margin: 0 auto;
-		background-image: url('../assets/sun-icon.png');
-	}
-	.sun a:hover {
-		background-image: url('../assets/sun-grey-icon.png');
-	}
-	.rain a {
-		height: 128px;
-		width: 128px;
-		display: block;
-		margin: 0 auto;
-		background-image: url('../assets/rain-icon.png');
-	}
-	.rain a:hover {
-		background-image: url('../assets/rain-grey-icon.png');
+
+	.span_1_of_1 {
+		@extend %full-width;
 	}
 }
 
-@media only screen and (min-width : 568px) { 
-	.choice-main-content .sun {
-		display: inline-block;
+@media only screen and (max-width: 480px) {
+	.grid .col { 
+		margin: 1% 0 1% 0%;
 	}
-	.choice-main-content .rain {
-		display: inline-block;
-	}	
+	.grid .span_3_of_3, .span_2_of_3, .span_1_of_3 { 
+		width: 100%; 
+	}
 }
- @media only screen and (min-width : 768px) { 
-	.choice-main-content {
-		width: 50%;
+
+/** category-form. **/
+.category-form {
+	.form-element {
+		margin: 0 auto;
+		padding: 0% 0 2% 0%;
 	}
- }
+}
 
 /** activity module **/
 .activity-main-content {

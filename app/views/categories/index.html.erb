@@ -1,3 +1,9 @@
-<% @categories.each { |category| %>
-	<%=link_to image_tag(category.photoUrl, :class => "photo"), category_activities_url(category) %>
-<% } %>
+<div class="grid">
+	<div class="grid-section group">
+		<% @categories.each { |category| %>
+			<div class="col span_1_of_3">
+				<%=link_to image_tag(category.photoUrl, :class => "photo"), category_activities_url(category) %>
+			</div>
+		<% } %>
+	</div>
+</div>

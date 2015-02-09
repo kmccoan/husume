@@ -2,9 +2,26 @@
   <div class="title"><%= I18n.t(:landing_text) %></div>
 <% end %>
 
-<div class="choice-main-content">
-	<%= form_tag("/categories", method: "get") do %>
-		<%= collection_select(:category, :category_type_id, CategoryType.all, :id, :name) %>
-		<%= submit_tag("Search") %>
-	<% end %>
+<div class="grid">
+	<div class="grid-section group">
+		<%  @categories = @category_types.first.categories
+			@categories.each { |category| 
+			if !category.activities.empty?
+		%>
+			<div class="col span_1_of_3">
+				<%=link_to image_tag(category.photoUrl, :class => "photo"), category_activities_url(category) %>
+			</div>
+		<% 
+			end
+		  } 
+		%>
+	</div>
 </div>
+
+<% content_for :footer do %>
+	<div class="activity-footer">
+		<div class="left-side">
+		   <%= paginate @category_types %>
+		</div>
+	</div>
+<% end %>
