@@ -1,0 +1,18 @@
+en:
+  landing_text: "Choose an activity based on"
+  activity_text: "You should go "
+  next_actitivy: "No, that looks lame"
+  change_weather_to_rainy: "Actually, its raining"
+  change_weather_to_sunny: "Actually, its sunny"
+  new_activity_text: "Create a new activity"
+  edit: "Edit"
+  delete: "Delete"
+  manage_activities: "Manage Activities"
+  register: "Register"
+  login: "Login"
+  activity: "Activity"
+  name: Title
+  long: Longitude
+  lat: Latitude
+  link: Url
+  weather: Weather

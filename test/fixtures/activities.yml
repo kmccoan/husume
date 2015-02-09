@@ -1,0 +1,30 @@
+one:
+  name: sun1
+  photoUrl: sun.png
+  weather: 0
+  link: http://www.test.com
+  lat: 0
+  long: 0
+two:
+  name: sun2
+  photoUrl: sun.png
+  weather: 0
+  link: http://www.test.com
+  lat: 0
+  long: 0
+
+three:
+  name: rain1
+  photoUrl: sun.png
+  weather: 1
+  link: http://www.test.com
+  lat: 0
+  long: 0
+
+four:
+  name: rain2
+  photoUrl: sun.png
+  weather: 1
+  link: http://www.test.com
+  lat: 0
+  long: 0

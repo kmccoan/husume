@@ -1,0 +1,24 @@
+<% content_for :header do %>
+  <%= I18n.t(:new_activity_text) %>
+<% end %>
+
+<div class="manage-activity-main-content">
+	     <%= form_for @activity, :url => { :action => "create" } do |f| %>
+         <% if @activity.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@activity.errors.count, "error") %> prohibited this post from being saved:</h2>
+ 
+    <ul>
+    <% @activity.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+		     <div class="form">
+					<%= render :partial => "form", :object => f, :locals => { :activity => @activity } %>
+				</div>
+			<div class="action_link"><%= f.submit %></div>
+		<% end %>
+		<%= link_to I18n.t(:manage_activities), activities_path(), :class => "action_link" %>
+</div>

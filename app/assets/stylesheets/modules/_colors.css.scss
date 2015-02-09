@@ -1,0 +1,17 @@
+/** Theme colors **/
+$theme-color-accent: #8CC739; /* Apple green */
+$theme-color-bold-primary: #085DAD; /* Blue */
+$theme-color-bold-secondary: #21BEDE; /* Atlantis blue */
+$theme-color-bold-tertiary: #31C3E7; /* Light Atlantis */
+$theme-color-shade-primary: #555555; /* Medium grey */
+$theme-color-shade-secondary: #ADB6B5; /* Light grey */
+$theme-color-shade-tertiary: #FFFFFF; /* White */
+
+/** Base colors **/
+$background-color: $theme-color-shade-tertiary;
+$primary-text-color:  $theme-color-shade-primary;
+
+$primary-link-color: $theme-color-shade-primary;
+$primary-link-hover: $theme-color-bold-primary;
+
+$primary-shadow-color: $theme-color-shade-secondary;

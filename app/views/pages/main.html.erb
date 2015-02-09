@@ -1,0 +1,10 @@
+<% content_for :header do %>
+  <div class="title"><%= I18n.t(:landing_text) %></div>
+<% end %>
+
+<div class="choice-main-content">
+	<%= form_tag("/categories", method: "get") do %>
+		<%= collection_select(:category, :category_type_id, CategoryType.all, :id, :name) %>
+		<%= submit_tag("Search") %>
+	<% end %>
+</div>
