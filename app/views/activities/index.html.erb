@@ -20,9 +20,11 @@
 </div>
 
 <% content_for :footer do %>
-	<div class="activity-footer">
-		<div class="left-side">
-		   <%= paginate @activities %>
-		</div>
+	<div class="grid">
+		<div class="grid-section group">
+			<div class="col span_1_of_1">
+				<%= paginate @activities %>
+			</div>
+		<div>
 	</div>
 <% end %>

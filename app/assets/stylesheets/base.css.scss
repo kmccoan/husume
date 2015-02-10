@@ -9,5 +9,8 @@ body {
     margin:0 auto;
 }
 
-a { color: $primary-link-color; }
+a { 
+	color: $primary-link-color;
+	letter-spacing: .21em; 
+}
 a:hover { color: $primary-link-hover; }  

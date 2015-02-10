@@ -1,10 +1,11 @@
+<% @type = @category_types.first %>
 <% content_for :header do %>
-  <div class="title"><%= I18n.t(:landing_text) %></div>
+  <div class="title"><%= I18n.t(:whats_the_) %><%= @type.name %>?</div>
 <% end %>
 
 <div class="grid">
 	<div class="grid-section group">
-		<%  @categories = @category_types.first.categories
+		<%  @categories = @type.categories
 			@categories.each { |category| 
 			if !category.activities.empty?
 		%>
@@ -19,9 +20,14 @@
 </div>
 
 <% content_for :footer do %>
-	<div class="activity-footer">
-		<div class="left-side">
-		   <%= paginate @category_types %>
-		</div>
+	<div class="grid">
+		<div class="grid-section group">
+			<div class="col span_1_of_2">
+				<%= link_to_previous_page @category_types, 'Wait.. I like the last set better' %>
+			</div>
+		   <div class="col span_1_of_2">
+			    <%= link_to_next_page @category_types, 'Not sure. Give me another set of choices' %>
+			</div>
+		<div>
 	</div>
 <% end %>

@@ -6,4 +6,5 @@ class Category < ActiveRecord::Base
 	has_many :activities, through: :activity_categorizations
 	belongs_to :category_type
 
+	default_scope { order(name: :asc) }
 end
