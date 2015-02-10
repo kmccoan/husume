@@ -20,8 +20,6 @@ module VancouverProj
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    config.assets.precompile += %w[admin/active_admin.css admin/active_admin.js]
-
     config.generators do |g| 
         g.test_framework :rspec,
             :fixtures => true,

@@ -1,4 +1,6 @@
 VancouverProj::Application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
 	get 'categories/index'
 
 	root :to => 'pages#main'
@@ -7,13 +9,6 @@ VancouverProj::Application.routes.draw do
 		resources :activities
 	end
 
-	namespace :activities do
-		get 'search'
-	end
-
-
-
-	devise_for :admin_users, ActiveAdmin::Devise.config
 	ActiveAdmin.routes(self)
 
 end
