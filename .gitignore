@@ -16,3 +16,6 @@
 
 #ignore DS files for mac
 .DS_Store
+
+#ignore the docs
+doc/guides/

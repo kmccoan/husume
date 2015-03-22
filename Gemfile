@@ -69,3 +69,6 @@ group :test do
 end
 
 gem 'kaminari'
+
+#For rake doc:guides to work.
+gem 'redcarpet', '~> 2.1.1'
